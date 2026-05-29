@@ -1,0 +1,747 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>876 Kitchen &mdash; Caribbean Kitchen on Ecclesall Road, Sheffield</title>
+<meta name="description" content="876 Kitchen is a Jamaican-Caribbean kitchen on Ecclesall Road, Sheffield. Halal jerk chicken, oxtail, curry goat, rice and peas. Dine in or order Deliveroo, Uber Eats, Just Eat. 11am to 10pm daily." />
+<meta name="theme-color" content="#0E1F18" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,400&display=swap" />
+
+<style>
+  :root{
+    --palm:        #0E1F18;   /* deep palm canopy */
+    --green:       #1A5934;   /* Jamaican green, restrained */
+    --gold:        #E8A33D;   /* allspice / sunshine gold */
+    --bonnet:      #C7392A;   /* scotch bonnet, for heat + CTAs */
+    --cream:       #F4E4BC;   /* warm cream — brief secondary */
+    --paper:       #FBF6E9;   /* off-white surface */
+    --ink:         #15110A;   /* near-black for body text */
+    --ink-muted:   #4B4337;
+
+    --display: "Bricolage Grotesque", ui-serif, Georgia, serif;
+    --body:    "Newsreader", Georgia, "Times New Roman", serif;
+
+    --max:     1180px;
+    --pad-x:   clamp(1.25rem, 4vw, 3rem);
+    --rad:     14px;
+  }
+
+  *,*::before,*::after{ box-sizing:border-box; }
+  html{ scroll-behavior:smooth; scroll-padding-top:74px; }
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:var(--body);
+    font-size:18px;
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+    text-rendering:optimizeLegibility;
+  }
+  a{ color:inherit; }
+  img{ max-width:100%; display:block; }
+  ::selection{ background:var(--gold); color:var(--palm); }
+
+  /* ─── NAV ─────────────────────────────────────────── */
+  .nav{
+    position:sticky; top:0; z-index:50;
+    background:rgba(251,246,233,0.92);
+    backdrop-filter:saturate(140%) blur(10px);
+    -webkit-backdrop-filter:saturate(140%) blur(10px);
+    border-bottom:1px solid rgba(21,17,10,0.08);
+  }
+  .nav__inner{
+    max-width:var(--max);
+    margin:0 auto;
+    padding:14px var(--pad-x);
+    display:flex; align-items:center; justify-content:space-between; gap:1rem;
+  }
+  .brand{
+    font-family:var(--display);
+    font-weight:800;
+    font-size:1.3rem;
+    letter-spacing:-0.01em;
+    text-decoration:none;
+    color:var(--palm);
+    display:inline-flex; align-items:baseline; gap:.45rem;
+  }
+  .brand__no{
+    font-variation-settings:"opsz" 96;
+    font-size:1.35rem;
+    color:var(--green);
+  }
+  .nav__links{
+    display:flex; gap:1.4rem;
+    font-family:var(--body);
+    font-size:.95rem;
+    letter-spacing:.02em;
+  }
+  .nav__links a{ text-decoration:none; color:var(--ink); opacity:.8; }
+  .nav__links a:hover{ opacity:1; color:var(--green); }
+  .nav__call{
+    text-decoration:none;
+    font-family:var(--display);
+    font-weight:600;
+    background:var(--palm);
+    color:var(--paper);
+    padding:.55rem .95rem;
+    border-radius:999px;
+    font-size:.9rem;
+    white-space:nowrap;
+  }
+  .nav__call:hover{ background:var(--bonnet); }
+  @media (max-width:720px){
+    .nav__links{ display:none; }
+  }
+
+  /* ─── HERO ────────────────────────────────────────── */
+  .hero{
+    background:var(--palm);
+    color:var(--paper);
+    position:relative;
+    overflow:hidden;
+    padding:clamp(3.5rem,9vw,7rem) var(--pad-x) clamp(3rem,7vw,5rem);
+  }
+  .hero::before{
+    /* off-axis spotlight, not a gradient hero */
+    content:"";
+    position:absolute;
+    width:60vw; height:60vw; max-width:780px; max-height:780px;
+    right:-15vw; top:-20vw;
+    background:radial-gradient(circle at center, rgba(232,163,61,0.55), rgba(232,163,61,0) 65%);
+    pointer-events:none;
+  }
+  .hero__inner{ max-width:var(--max); margin:0 auto; position:relative; }
+
+  .hero__country{
+    display:inline-block;
+    font-family:var(--body);
+    font-style:italic;
+    color:var(--gold);
+    letter-spacing:.05em;
+    font-size:1rem;
+    margin-bottom:1rem;
+  }
+
+  .hero__no{
+    font-family:var(--display);
+    font-variation-settings:"opsz" 96;
+    font-weight:800;
+    font-size:clamp(7rem, 26vw, 18rem);
+    line-height:.85;
+    letter-spacing:-0.04em;
+    margin:0;
+    color:var(--paper);
+    /* faint outline tone */
+    text-shadow:0 0 0 transparent;
+  }
+  .hero__no span{ color:var(--gold); }
+
+  .hero__h1{
+    font-family:var(--display);
+    font-weight:600;
+    font-size:clamp(1.6rem, 3.4vw, 2.5rem);
+    line-height:1.1;
+    letter-spacing:-0.015em;
+    margin:1.2rem 0 .25rem;
+    max-width:18ch;
+  }
+  .hero__tag{
+    font-family:var(--body);
+    font-style:italic;
+    font-size:clamp(1.05rem,1.6vw,1.35rem);
+    color:var(--cream);
+    margin:0 0 2rem;
+    max-width:32ch;
+  }
+
+  .hero__ctas{ display:flex; flex-wrap:wrap; gap:.8rem; }
+  .btn{
+    display:inline-block;
+    text-decoration:none;
+    padding:.95rem 1.4rem;
+    border-radius:999px;
+    font-family:var(--display);
+    font-weight:600;
+    font-size:1rem;
+    letter-spacing:.005em;
+    transition:transform .15s ease, background .2s ease;
+  }
+  .btn:hover{ transform:translateY(-1px); }
+  .btn--bonnet{ background:var(--bonnet); color:var(--paper); }
+  .btn--bonnet:hover{ background:#a52e22; }
+  .btn--gold{ background:var(--gold); color:var(--palm); }
+  .btn--gold:hover{ background:#d8932e; }
+  .btn--ghost{ border:1.5px solid rgba(251,246,233,0.35); color:var(--paper); }
+  .btn--ghost:hover{ border-color:var(--paper); }
+
+  /* ─── MARQUEE STRIP ───────────────────────────────── */
+  .marquee{
+    background:var(--gold);
+    color:var(--palm);
+    border-top:1px solid rgba(21,17,10,.1);
+    border-bottom:1px solid rgba(21,17,10,.1);
+    overflow:hidden;
+    font-family:var(--display);
+    font-weight:600;
+    letter-spacing:.06em;
+    text-transform:uppercase;
+    font-size:.95rem;
+  }
+  .marquee__track{
+    display:flex; gap:3rem;
+    padding:.95rem 0;
+    width:max-content;
+    animation:slide 35s linear infinite;
+  }
+  .marquee__track span::after{
+    content:"·";
+    margin-left:3rem;
+    color:var(--bonnet);
+  }
+  @keyframes slide{
+    from{ transform:translateX(0); }
+    to{   transform:translateX(-50%); }
+  }
+  @media (prefers-reduced-motion: reduce){
+    .marquee__track{ animation:none; }
+  }
+
+  /* ─── SECTIONS ────────────────────────────────────── */
+  section{ padding:clamp(3.5rem,7vw,6rem) var(--pad-x); }
+  .wrap{ max-width:var(--max); margin:0 auto; }
+
+  .eyebrow{
+    font-family:var(--body);
+    font-style:italic;
+    color:var(--green);
+    letter-spacing:.04em;
+    font-size:.95rem;
+    margin:0 0 .8rem;
+  }
+  .h2{
+    font-family:var(--display);
+    font-weight:800;
+    font-size:clamp(2rem,4.5vw,3.4rem);
+    line-height:1.05;
+    letter-spacing:-0.025em;
+    margin:0 0 1rem;
+    color:var(--palm);
+    font-variation-settings:"opsz" 60;
+  }
+  .h2 em{
+    font-family:var(--body);
+    font-style:italic;
+    font-weight:400;
+    color:var(--green);
+  }
+  .lede{
+    font-size:1.2rem;
+    line-height:1.55;
+    max-width:60ch;
+    color:var(--ink);
+  }
+
+  /* about */
+  .about{ background:var(--paper); }
+  .about__grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:clamp(2rem,5vw,4rem);
+    align-items:start;
+  }
+  @media (max-width:820px){
+    .about__grid{ grid-template-columns:1fr; }
+  }
+  .about__notes{
+    border-left:2px solid var(--gold);
+    padding:.4rem 0 .4rem 1.4rem;
+    color:var(--ink-muted);
+    font-size:1.05rem;
+  }
+  .about__notes p{ margin:0 0 1rem; }
+  .about__notes p:last-child{ margin:0; }
+
+  /* menu */
+  .menu{
+    background:var(--cream);
+    color:var(--ink);
+    position:relative;
+  }
+  .menu__intro{ max-width:60ch; margin-bottom:2.5rem; }
+  .menu__group + .menu__group{ margin-top:3rem; }
+  .menu__group h3{
+    font-family:var(--display);
+    font-weight:800;
+    font-size:1.7rem;
+    letter-spacing:-0.01em;
+    margin:0 0 .5rem;
+    color:var(--palm);
+    display:flex; align-items:baseline; gap:1rem;
+  }
+  .menu__group h3::after{
+    content:"";
+    flex:1;
+    border-bottom:1.5px dashed rgba(21,17,10,.25);
+    transform:translateY(-.35em);
+  }
+  .menu__group p.note{
+    font-style:italic;
+    font-size:1rem;
+    color:var(--ink-muted);
+    margin:0 0 1.2rem;
+    max-width:55ch;
+  }
+  .menu__row{
+    display:flex; gap:1rem; align-items:baseline;
+    padding:.85rem 0;
+    border-bottom:1px solid rgba(21,17,10,.1);
+    font-size:1.05rem;
+  }
+  .menu__row:last-child{ border-bottom:none; }
+  .menu__row .name{ font-family:var(--display); font-weight:600; color:var(--palm); }
+  .menu__row .desc{
+    font-style:italic;
+    color:var(--ink-muted);
+    flex:1;
+    font-size:.95rem;
+  }
+  .menu__row .price{
+    font-family:var(--display);
+    font-weight:600;
+    color:var(--green);
+    white-space:nowrap;
+  }
+  .menu__row .heat{
+    color:var(--bonnet);
+    font-size:.85rem;
+    font-style:italic;
+    margin-left:.4rem;
+  }
+  .menu__row .vg{
+    color:var(--green);
+    font-size:.78rem;
+    font-weight:700;
+    letter-spacing:.05em;
+    margin-left:.4rem;
+  }
+  .menu__caveat{
+    margin-top:2.5rem;
+    font-size:.95rem;
+    color:var(--ink-muted);
+    font-style:italic;
+    max-width:55ch;
+  }
+  .menu__order{
+    margin-top:2.5rem;
+    display:flex; flex-wrap:wrap; gap:.8rem;
+  }
+  .pill{
+    text-decoration:none;
+    background:var(--paper);
+    color:var(--palm);
+    border:1.5px solid var(--palm);
+    padding:.6rem 1rem;
+    border-radius:999px;
+    font-family:var(--display);
+    font-weight:600;
+    font-size:.95rem;
+  }
+  .pill:hover{ background:var(--palm); color:var(--paper); }
+
+  /* gallery placeholder */
+  .gallery{ background:var(--paper); }
+  .gallery__grid{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:1rem;
+    margin-top:2rem;
+  }
+  @media (max-width:720px){
+    .gallery__grid{ grid-template-columns:repeat(2,1fr); }
+  }
+  .gallery__tile{
+    aspect-ratio:4/5;
+    border-radius:var(--rad);
+    background:
+      repeating-linear-gradient(135deg,
+        rgba(26,89,52,.06) 0 12px,
+        rgba(26,89,52,.02) 12px 24px),
+      var(--cream);
+    border:1px dashed rgba(26,89,52,.35);
+    display:flex; align-items:center; justify-content:center;
+    color:var(--green);
+    font-family:var(--body);
+    font-style:italic;
+    font-size:.9rem;
+    text-align:center;
+    padding:1rem;
+  }
+  .gallery__tile.tall{ aspect-ratio:3/5; }
+  .gallery__note{
+    margin-top:2rem;
+    font-style:italic;
+    color:var(--ink-muted);
+    max-width:55ch;
+  }
+
+  /* contact */
+  .contact{
+    background:var(--palm);
+    color:var(--paper);
+  }
+  .contact .h2{ color:var(--paper); }
+  .contact .h2 em{ color:var(--gold); }
+  .contact .eyebrow{ color:var(--gold); }
+  .contact__grid{
+    display:grid;
+    grid-template-columns:1fr 1.2fr;
+    gap:clamp(2rem,5vw,4rem);
+    align-items:start;
+    margin-top:2.5rem;
+  }
+  @media (max-width:820px){
+    .contact__grid{ grid-template-columns:1fr; }
+  }
+  .contact__col h4{
+    font-family:var(--display);
+    font-weight:600;
+    font-size:.9rem;
+    letter-spacing:.1em;
+    text-transform:uppercase;
+    color:var(--gold);
+    margin:0 0 .5rem;
+  }
+  .contact__col p, .contact__col a{
+    margin:0 0 1.4rem;
+    color:var(--paper);
+    text-decoration:none;
+    font-size:1.15rem;
+    display:block;
+  }
+  .contact__col a:hover{ color:var(--gold); }
+  .contact__phone{
+    font-family:var(--display) !important;
+    font-weight:800 !important;
+    font-size:1.8rem !important;
+  }
+  .map{
+    border:0;
+    width:100%;
+    aspect-ratio:4/3;
+    border-radius:var(--rad);
+    background:#1b2c25;
+    filter:contrast(0.95) saturate(0.85);
+  }
+
+  /* scroll-driven reveals */
+  @supports (animation-timeline: view()){
+    .reveal{
+      animation: rise both;
+      animation-timeline: view();
+      animation-range: entry 0% cover 25%;
+    }
+    @keyframes rise{
+      from{ opacity:0; transform:translateY(1.5rem); }
+      to{ opacity:1; transform:translateY(0); }
+    }
+  }
+
+  /* footer */
+  .foot{
+    background:var(--ink);
+    color:var(--cream);
+    padding:2.5rem var(--pad-x);
+    font-size:.9rem;
+  }
+  .foot__inner{
+    max-width:var(--max);
+    margin:0 auto;
+    display:flex; flex-wrap:wrap;
+    justify-content:space-between; gap:1.2rem;
+  }
+  .foot a{ color:var(--gold); text-decoration:none; }
+  .foot a:hover{ text-decoration:underline; }
+
+  /* tiny accessibility helpers */
+  .sr{ position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0; }
+</style>
+</head>
+<body>
+
+<!-- ─── NAV ─────────────────────────────────────────── -->
+<header class="nav">
+  <div class="nav__inner">
+    <a href="#home" class="brand"><span class="brand__no">876</span> Kitchen</a>
+    <nav class="nav__links" aria-label="Primary">
+      <a href="#about">About</a>
+      <a href="#menu">Menu</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#contact">Visit</a>
+    </nav>
+    <a href="tel:+447904815595" class="nav__call">Call 07904 815595</a>
+  </div>
+</header>
+
+<!-- ─── HERO ────────────────────────────────────────── -->
+<section id="home" class="hero" aria-labelledby="page-title">
+  <div class="hero__inner">
+    <span class="hero__country">+876 &mdash; the calling code of Jamaica</span>
+    <p class="hero__no">87<span>6</span></p>
+    <h1 id="page-title" class="hero__h1">876 Kitchen &mdash; a Caribbean kitchen on Ecclesall Road.</h1>
+    <p class="hero__tag">Taste the island vibes in every bite. Halal, fresh, slow-cooked &mdash; the way it's done back home.</p>
+    <div class="hero__ctas">
+      <a class="btn btn--gold" href="#menu">See the menu</a>
+      <a class="btn btn--ghost" href="#contact">Find us in S11</a>
+    </div>
+  </div>
+</section>
+
+<!-- ─── MARQUEE STRIP ──────────────────────────────── -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee__track">
+    <span>Halal Caribbean</span>
+    <span>Vegan options</span>
+    <span>Dine in</span>
+    <span>Deliveroo</span>
+    <span>Uber Eats</span>
+    <span>Just Eat</span>
+    <span>11am till 10pm</span>
+    <span>Halal Caribbean</span>
+    <span>Vegan options</span>
+    <span>Dine in</span>
+    <span>Deliveroo</span>
+    <span>Uber Eats</span>
+    <span>Just Eat</span>
+    <span>11am till 10pm</span>
+  </div>
+</div>
+
+<!-- ─── ABOUT ───────────────────────────────────────── -->
+<section id="about" class="about">
+  <div class="wrap">
+    <p class="eyebrow reveal">About 876</p>
+    <h2 class="h2 reveal">Caribbean cooking, <em>made fresh</em> on Ecclesall Road.</h2>
+
+    <div class="about__grid" style="margin-top:2.5rem;">
+      <div class="reveal">
+        <p class="lede">
+          876 Kitchen brings the lively flavours of the Caribbean to Sheffield &mdash;
+          jerk, curry, oxtail, rice and peas &mdash; cooked with traditional methods,
+          fresh ingredients, and the kind of warm welcome you'd expect at someone's
+          kitchen table.
+        </p>
+        <p style="margin-top:1.2rem; color:var(--ink-muted);">
+          The name is a nod home: 876 is the calling code of Jamaica. Every platter
+          on the menu carries that line back to the islands &mdash; the spice
+          cupboards, the slow-cooked stews, the Sunday lunches.
+        </p>
+      </div>
+      <div class="about__notes reveal">
+        <p><strong>Fresh, local, traditional.</strong> Ingredients sourced as locally
+        as Caribbean cooking allows, prepped fresh each day.</p>
+        <p><strong>Fully halal.</strong> The whole kitchen, top to bottom.</p>
+        <p><strong>Vegan options.</strong> Ackee, plantain, rice and peas, callaloo
+        &mdash; the island has always known how to feed a plant-based plate.</p>
+        <p><strong>Dine in or takeaway.</strong> Eat in with us on Ecclesall Road,
+        or order through Deliveroo, Uber Eats or Just Eat.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── MENU ────────────────────────────────────────── -->
+<section id="menu" class="menu">
+  <div class="wrap">
+    <p class="eyebrow reveal">The menu</p>
+    <h2 class="h2 reveal">Platters, mains <em>&amp; the good sides.</em></h2>
+    <p class="menu__intro lede reveal" style="margin-top:1.2rem;">
+      Build your own platter, or pick a main. Every dish is cooked fresh to order,
+      so come hungry and patient &mdash; it's worth it.
+    </p>
+
+    <div class="menu__group reveal">
+      <h3>Build a Platter</h3>
+      <p class="note">Choose your base, your main, and a side. From £12.50.</p>
+      <div class="menu__row">
+        <span class="name">The 876 Platter</span>
+        <span class="desc">Base + main + one side, your choice from below.</span>
+        <span class="price">from &pound;12.50</span>
+      </div>
+    </div>
+
+    <div class="menu__group reveal">
+      <h3>Mains</h3>
+      <p class="note">Slow-cooked, deeply seasoned, served generous.</p>
+      <div class="menu__row">
+        <span class="name">Jerk Chicken</span>
+        <span class="desc">Marinated overnight in scotch bonnet, allspice and thyme. Smoky, slow-grilled.<span class="heat">spicy</span></span>
+        <span class="price">&pound;12.50&ndash;&pound;14.50</span>
+      </div>
+      <div class="menu__row">
+        <span class="name">Oxtail</span>
+        <span class="desc">Braised low and slow with butter beans, until the meat falls off the bone.</span>
+        <span class="price">&pound;12.50&ndash;&pound;14.50</span>
+      </div>
+      <div class="menu__row">
+        <span class="name">Curry Goat</span>
+        <span class="desc">Goat shoulder simmered with Caribbean curry, scotch bonnet, garlic and ginger.<span class="heat">spicy</span></span>
+        <span class="price">&pound;12.50&ndash;&pound;14.50</span>
+      </div>
+      <div class="menu__row">
+        <span class="name">Mutton Curry</span>
+        <span class="desc">Rich, fragrant, fall-apart tender. A regular's favourite.<span class="heat">spicy</span></span>
+        <span class="price">&pound;12.50&ndash;&pound;14.50</span>
+      </div>
+      <div class="menu__row">
+        <span class="name">Ackee &amp; Saltfish (V option)</span>
+        <span class="desc">Jamaica's national dish &mdash; ackee sauteed with peppers and onions. Vegan version available.<span class="vg">vegan</span></span>
+        <span class="price">&pound;12.50&ndash;&pound;14.50</span>
+      </div>
+    </div>
+
+    <div class="menu__group reveal">
+      <h3>Sides</h3>
+      <p class="note">Pick one with a platter, or stack a few on the side.</p>
+      <div class="menu__row">
+        <span class="name">Rice &amp; Peas</span>
+        <span class="desc">Coconut rice cooked with kidney beans, thyme and scotch bonnet.<span class="vg">vegan</span></span>
+        <span class="price">&pound;2&ndash;&pound;4</span>
+      </div>
+      <div class="menu__row">
+        <span class="name">Fried Plantain</span>
+        <span class="desc">Sweet, caramelised slices of ripe plantain.<span class="vg">vegan</span></span>
+        <span class="price">&pound;2&ndash;&pound;4</span>
+      </div>
+      <div class="menu__row">
+        <span class="name">Coleslaw</span>
+        <span class="desc">Crunchy, fresh, lightly dressed.</span>
+        <span class="price">&pound;2&ndash;&pound;4</span>
+      </div>
+      <div class="menu__row">
+        <span class="name">Callaloo</span>
+        <span class="desc">Caribbean leafy greens sauteed with onion and garlic.<span class="vg">vegan</span></span>
+        <span class="price">&pound;2&ndash;&pound;4</span>
+      </div>
+    </div>
+
+    <div class="menu__group reveal">
+      <h3>Juices &amp; Desserts</h3>
+      <p class="note">Cool it down or finish it off.</p>
+      <div class="menu__row">
+        <span class="name">House Juices</span>
+        <span class="desc">Caribbean classics &mdash; ask what's pouring today.</span>
+        <span class="price">&pound;2&ndash;&pound;2.50</span>
+      </div>
+      <div class="menu__row">
+        <span class="name">Dessert of the day</span>
+        <span class="desc">Rotates. Ask the kitchen.</span>
+        <span class="price">&pound;2&ndash;&pound;2.50</span>
+      </div>
+    </div>
+
+    <p class="menu__caveat">
+      Menu prices reflect 2026 platter ranges &mdash; final price depends on portion
+      size and choice of main. Please ring 07904 815595 if you'd like to confirm
+      anything before you order.
+    </p>
+
+    <div class="menu__order">
+      <a class="pill" href="https://deliveroo.co.uk/menu/sheffield/ecclesall-road/876-kitchen-679-ecclesall-rd" rel="noopener">Order on Deliveroo</a>
+      <a class="pill" href="https://www.ubereats.com/gb/store/876-kitchen/6GOtt_mJXoe0C82ZDNw-Gg" rel="noopener">Order on Uber Eats</a>
+      <a class="pill" href="https://www.just-eat.co.uk/restaurants-876-kitchen-sheffield/menu" rel="noopener">Order on Just Eat</a>
+    </div>
+  </div>
+</section>
+
+<!-- ─── GALLERY ─────────────────────────────────────── -->
+<section id="gallery" class="gallery">
+  <div class="wrap">
+    <p class="eyebrow reveal">Gallery</p>
+    <h2 class="h2 reveal">Fresh photos <em>coming soon.</em></h2>
+    <p class="lede reveal" style="margin-top:1.2rem;">
+      We're putting together a proper gallery of the kitchen, the food and the
+      people. Until then, the best way to see what's on a plate today is
+      Instagram &mdash;
+      <a href="https://www.instagram.com/876_kitchen_/" style="color:var(--green); font-style:italic;">@876_kitchen_</a>.
+    </p>
+
+    <div class="gallery__grid" aria-hidden="true">
+      <div class="gallery__tile reveal">Jerk Chicken</div>
+      <div class="gallery__tile tall reveal">Oxtail &amp; Butter Beans</div>
+      <div class="gallery__tile reveal">Curry Goat</div>
+      <div class="gallery__tile tall reveal">Rice &amp; Peas</div>
+      <div class="gallery__tile reveal">The Counter</div>
+      <div class="gallery__tile reveal">Plantain &amp; Slaw</div>
+    </div>
+
+    <p class="gallery__note">
+      Placeholder cards above &mdash; real photography will replace these as soon
+      as we have them.
+    </p>
+  </div>
+</section>
+
+<!-- ─── CONTACT ─────────────────────────────────────── -->
+<section id="contact" class="contact">
+  <div class="wrap">
+    <p class="eyebrow reveal">Visit / Order</p>
+    <h2 class="h2 reveal">Find us on <em>Ecclesall Road.</em></h2>
+
+    <div class="contact__grid">
+      <div class="contact__col reveal">
+        <h4>Address</h4>
+        <p>679 Ecclesall Road<br />Sheffield<br />S11 8TG</p>
+
+        <h4>Phone</h4>
+        <a class="contact__phone" href="tel:+447904815595">07904 815595</a>
+
+        <h4>Opening hours</h4>
+        <p>Open daily<br />11:00 &mdash; 22:00</p>
+
+        <h4>Order online</h4>
+        <p style="margin-bottom:.4rem;">
+          <a href="https://deliveroo.co.uk/menu/sheffield/ecclesall-road/876-kitchen-679-ecclesall-rd" rel="noopener" style="font-size:1rem; display:inline;">Deliveroo</a>
+          &nbsp;&middot;&nbsp;
+          <a href="https://www.ubereats.com/gb/store/876-kitchen/6GOtt_mJXoe0C82ZDNw-Gg" rel="noopener" style="font-size:1rem; display:inline;">Uber Eats</a>
+          &nbsp;&middot;&nbsp;
+          <a href="https://www.just-eat.co.uk/restaurants-876-kitchen-sheffield/menu" rel="noopener" style="font-size:1rem; display:inline;">Just Eat</a>
+        </p>
+
+        <h4>Follow</h4>
+        <p>
+          <a href="https://www.instagram.com/876_kitchen_/" rel="noopener" style="font-size:1rem; display:inline;">Instagram &mdash; @876_kitchen_</a>
+        </p>
+      </div>
+
+      <div class="reveal">
+        <iframe
+          class="map"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          src="https://www.google.com/maps?q=679%20Ecclesall%20Road%2C%20Sheffield%20S11%208TG&output=embed"
+          title="Map showing 876 Kitchen at 679 Ecclesall Road, Sheffield S11 8TG">
+        </iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── FOOT ────────────────────────────────────────── -->
+<footer class="foot">
+  <div class="foot__inner">
+    <div>876 Kitchen &middot; 679 Ecclesall Road &middot; Sheffield S11 8TG</div>
+    <div>
+      <a href="tel:+447904815595">07904 815595</a>
+      &nbsp;&middot;&nbsp;
+      <a href="https://www.instagram.com/876_kitchen_/" rel="noopener">@876_kitchen_</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
